@@ -31,20 +31,27 @@
 
       <a-entity id="oil-bottle-target" mindar-image-target="targetIndex: 0">
         
-        <a-plane position="-0.7 0 0.1" width="0.6" height="0.8" color="#1a1a1a" opacity="0.9">
-          <a-text value="SPECIFICATIONS" align="center" color="#FFD700" width="1.5" position="0 0.3 0"></a-text>
+        <a-plane position="-0.7 0 0.1" width="0.6" height="0.8" color="#FFFFFF" opacity="0.9">
+          <a-text value="SPECIFICATIONS" align="center" color="#CC0000" width="1.5" position="0 0.35 0" font="aileronmsdf"></a-text>
           <a-text value="• Full Synthetic 5W-30\n• ACEA: C1\n• Ford: M2C934\n• STJLR.03.5005\n• Mazda: JASO DL-1" 
-                  align="left" color="white" width="1.2" position="-0.25 0 0"></a-text>
+                  align="left" color="#000000" width="1.2" position="-0.25 0.05 0" font="aileronmsdf"></a-text>
         </a-plane>
 
-        <a-plane class="clickable" position="0.7 0 0.1" width="0.6" height="0.8" color="#1a1a1a" opacity="0.9"
+        <a-plane class="clickable" position="0.7 0 0.1" width="0.7" height="1.0" color="#FFFFFF" opacity="0.9"
                  onclick="window.open('https://yourbrand.com/sds.pdf', '_blank')">
-          <a-text value="SAFETY DATA" align="center" color="#FFD700" width="1.5" position="0 0.3 0"></a-text>
-          <a-text value="If medical advice is needed, have product container or label at hand. Keep out of reach of children. Contains: (Benzenesulfonic acid, mono-C16-24-alkyl derivs., calcium salts) May produce an allergic reaction." 
-                  align="center" color="white" width="1.1" position="0 0 0"></a-text>
           
-          <a-plane position="0 -0.3 0.01" width="0.4" height="0.1" color="#FFD700">
-            <a-text value="VIEW PDF" align="center" color="black" width="1"></a-text>
+          <a-text value="SAFETY DATA" align="center" color="#CC0000" width="1.5" position="0 0.43 0" font="aileronmsdf"></a-text>
+          
+          <a-text value="If medical advice is needed, have product container or label at hand. Keep out of reach of children. Contains: (Benzenesulfonic acid, mono-C16-24-alkyl derivs., calcium salts) May produce an allergic reaction." 
+                  align="center" 
+                  color="#000000" 
+                  width="0.6" 
+                  position="0 0.05 0" 
+                  wrap-count="25"
+                  font="aileronmsdf"></a-text>
+          
+          <a-plane position="0 -0.4 0.01" width="0.4" height="0.12" color="#CC0000">
+            <a-text value="VIEW FULL PDF" align="center" color="#FFFFFF" width="1.1" font="aileronmsdf"></a-text>
           </a-plane>
         </a-plane>
 
@@ -55,12 +62,10 @@
       const overlay = document.querySelector('#scanning-overlay');
       const targetEntity = document.querySelector('#oil-bottle-target');
 
-      // Hide overlay when label is detected
       targetEntity.addEventListener("targetFound", event => {
         overlay.style.display = "none";
       });
 
-      // Show overlay again if tracking is lost
       targetEntity.addEventListener("targetLost", event => {
         overlay.style.display = "flex";
       });
