@@ -35,17 +35,22 @@
 
       <a-entity mindar-image-target="targetIndex: 0">
         
-        <a-plane position="0 0.6 0" width="1" height="0.4" color="#1a1a1a" opacity="0.9">
-          <a-text value="SAE 5W-30\nAPI SP / ILSAC GF-6A" align="center" color="#FFD700" width="2"></a-text>
+        <a-plane position="-0.7 0 0.1" width="0.6" height="0.8" color="#1a1a1a" opacity="0.8">
+          <a-text value="SPECIFICATIONS" align="center" color="#FFD700" width="1.5" position="0 0.3 0"></a-text>
+          <a-text value="• Full Synthetic\n• SAE 5W-30\n• API SP\n• ILSAC GF-6A\n• Dexos Gen 3" 
+                  align="left" color="white" width="1.2" position="-0.25 0 0"></a-text>
         </a-plane>
 
-        <a-image 
-          class="clickable"
-          src="#sdsIcon" 
-          position="0 -0.5 0.1" 
-          height="0.3" width="0.3"
-          onclick="window.open('https://yourbrand.com/sds-info.pdf', '_blank')">
-        </a-image>
+        <a-plane class="clickable" position="0.7 0 0.1" width="0.6" height="0.8" color="#1a1a1a" opacity="0.8"
+                 onclick="window.open('https://yourbrand.com/sds.pdf', '_blank')">
+          <a-text value="SAFETY DATA (SDS)" align="center" color="#FFD700" width="1.5" position="0 0.3 0"></a-text>
+          <a-text value="CAUTION:\nAvoid skin contact.\nKeep away from heat.\nClick to view full\nPDF safety sheet." 
+                  align="center" color="white" width="1.2" position="0 -0.05 0"></a-text>
+          
+          <a-plane position="0 -0.3 0.01" width="0.4" height="0.1" color="#FFD700">
+            <a-text value="VIEW PDF" align="center" color="black" width="1"></a-text>
+          </a-plane>
+        </a-plane>
 
       </a-entity>
     </a-scene>
